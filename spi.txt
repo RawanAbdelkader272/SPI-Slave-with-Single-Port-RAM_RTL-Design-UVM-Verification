@@ -1,0 +1,2419 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top/slave_interface
+=== Design Unit: work.spi_slave_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         74        74         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/slave_interface --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         37 
+Toggled Node Count   =         37 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (74 of 74 bins)
+
+=================================================================================
+=== Instance: /top/DUT
+=== Design Unit: work.SLAVE
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       9         9         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top/DUT/assert__check_read_data_to_idle
+                     SPI_slave.sv(203)                  0          1
+/top/DUT/assert__check_read_addr_to_idle
+                     SPI_slave.sv(202)                  0          1
+/top/DUT/assert__check_write_to_idle
+                     SPI_slave.sv(201)                  0          1
+/top/DUT/assert__check_read_data_transition
+                     SPI_slave.sv(200)                  0          1
+/top/DUT/assert__check_read_addr_transition
+                     SPI_slave.sv(199)                  0          1
+/top/DUT/assert__check_write_transition
+                     SPI_slave.sv(198)                  0          1
+/top/DUT/assert__check_idle_transition
+                     SPI_slave.sv(197)                  0          1
+/top/DUT/assert__check_rx_valid_property
+                     SPI_slave.sv(196)                  0          1
+/top/DUT/assert__check_reset_property
+                     SPI_slave.sv(195)                  0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        40        40         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top/DUT
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File SPI_slave.sv
+------------------------------------IF Branch------------------------------------
+    20                                       587     Count coming in to IF
+    20              1                         46         if (~ss_if.rst_n) begin
+    23              1                        541         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    29                                      1041     Count coming in to CASE
+    30              1                        270             IDLE : begin
+    36              1                        213             CHK_CMD : begin
+    53              1                        261             WRITE : begin
+    59              1                        208             READ_ADD : begin
+    65              1                         66             READ_DATA : begin
+                                              23     All False Count
+Branch totals: 6 hits of 6 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    31                                       270     Count coming in to IF
+    31              1                        111                 if (ss_if.SS_n)
+    33              1                        159                 else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    37                                       213     Count coming in to IF
+    37              1                          5                 if (ss_if.SS_n)
+    39              1                        208                 else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                       208     Count coming in to IF
+    40              1                        101                     if (~ss_if.MOSI)
+    42              1                        107                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                       107     Count coming in to IF
+    46              1                         26                         if (received_address) 
+    48              1                         81                         else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                       261     Count coming in to IF
+    54              1                         54                 if (ss_if.SS_n)
+    56              1                        207                 else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                       208     Count coming in to IF
+    60              1                         39                 if (ss_if.SS_n)
+    62              1                        169                 else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                        66     Count coming in to IF
+    66              1                         11                 if (ss_if.SS_n)
+    68              1                         55                 else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    75                                      2001     Count coming in to IF
+    75              1                         46         if (~ss_if.rst_n) begin 
+    82              1                       1955         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    83                                      1955     Count coming in to CASE
+    84              1                        152                 IDLE : begin
+    87              1                        147                 CHK_CMD : begin
+    90              1                        833                 WRITE : begin
+    99              1                        559                 READ_ADD : begin
+    109             1                        226                 READ_DATA : begin
+                                              38     All False Count
+Branch totals: 6 hits of 6 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    91                                       833     Count coming in to IF
+    91              1                        579                     if (counter > 0) begin
+    95              1                        254                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    100                                      559     Count coming in to IF
+    100             1                        420                     if (counter > 0) begin
+    104             1                        139                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    110                                      226     Count coming in to IF
+    110             1                        114                     if (ss_if.tx_valid) begin
+    123             1                        112                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    114                                      114     Count coming in to IF
+    114             1                        100                         if (counter > 0) begin
+    118             1                         14                         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    124                                      112     Count coming in to IF
+    124             1                         98                         if (counter > 0) begin
+    128             1                         14                         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         4         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top/DUT --
+
+  File SPI_slave.sv
+----------------Focused Condition View-------------------
+Line       91 Item    1  (counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       100 Item    1  (counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       114 Item    1  (counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       124 Item    1  (counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+
+Directive Coverage:
+    Directives                       9         9         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/DUT/cover__check_read_data_to_idle  SLAVE  Verilog  SVA  SPI_slave.sv(213)
+                                                                                 4 Covered   
+/top/DUT/cover__check_read_addr_to_idle  SLAVE  Verilog  SVA  SPI_slave.sv(212)
+                                                                                21 Covered   
+/top/DUT/cover__check_write_to_idle      SLAVE  Verilog  SVA  SPI_slave.sv(211)
+                                                                                12 Covered   
+/top/DUT/cover__check_read_data_transition 
+                                         SLAVE  Verilog  SVA  SPI_slave.sv(210)
+                                                                                15 Covered   
+/top/DUT/cover__check_read_addr_transition 
+                                         SLAVE  Verilog  SVA  SPI_slave.sv(209)
+                                                                                59 Covered   
+/top/DUT/cover__check_write_transition   SLAVE  Verilog  SVA  SPI_slave.sv(208)
+                                                                                65 Covered   
+/top/DUT/cover__check_idle_transition    SLAVE  Verilog  SVA  SPI_slave.sv(207)
+                                                                               147 Covered   
+/top/DUT/cover__check_rx_valid_property  SLAVE  Verilog  SVA  SPI_slave.sv(206)
+                                                                                22 Covered   
+/top/DUT/cover__check_reset_property     SLAVE  Verilog  SVA  SPI_slave.sv(205)
+                                                                                46 Covered   
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM States                       5         5         0   100.00%
+    FSM Transitions                  8         8         0   100.00%
+
+================================FSM Details================================
+
+FSM Coverage for instance /top/DUT --
+
+FSM_ID: cs
+    Current State Object : cs
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  30                IDLE                   0
+  36             CHK_CMD                   2
+  59            READ_ADD                   3
+  65           READ_DATA                   4
+  53               WRITE                   1
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+                    IDLE                 157          
+                 CHK_CMD                 150          
+                READ_ADD                 117          
+               READ_DATA                  30          
+                   WRITE                 132          
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  34                   0                 150          IDLE -> CHK_CMD               
+  49                   1                  60          CHK_CMD -> READ_ADD           
+  47                   2                  15          CHK_CMD -> READ_DATA          
+  41                   3                  67          CHK_CMD -> WRITE              
+  38                   4                   8          CHK_CMD -> IDLE               
+  61                   5                  60          READ_ADD -> IDLE              
+  67                   6                  15          READ_DATA -> IDLE             
+  55                   7                  66          WRITE -> IDLE                 
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM States                   5         5         0   100.00%
+        FSM Transitions              8         8         0   100.00%
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      39        39         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/DUT --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File SPI_slave.sv
+    6                                                module SLAVE (spi_slave_if.DUT ss_if);
+    7                                                
+    8                                                localparam IDLE      = 3'b000;                  // REVERTED: Original state name
+    9                                                localparam WRITE     = 3'b001;                  // REVERTED: Original state name
+    10                                               localparam CHK_CMD   = 3'b010;                  // REVERTED: Original state name
+    11                                               localparam READ_ADD  = 3'b011;                  // REVERTED: Original state name
+    12                                               localparam READ_DATA = 3'b100;                  // REVERTED: Original state name
+    13                                               
+    14                                               reg [3:0] counter;                              // REVERTED: Original signal name
+    15                                               reg       received_address;                     // REVERTED: Original signal name
+    16                                               
+    17                                               reg [2:0] cs, ns;                               // REVERTED: Original state names
+    18                                               
+    19              1                        587     always @(posedge ss_if.clk) begin
+    20                                                   if (~ss_if.rst_n) begin
+    21              1                         46             cs <= IDLE;
+    22                                                   end
+    23                                                   else begin
+    24              1                        541             cs <= ns;
+    25                                                   end
+    26                                               end
+    27                                               
+    28              1                       1041     always @(*) begin
+    29                                                   case (cs)
+    30                                                       IDLE : begin
+    31                                                           if (ss_if.SS_n)
+    32              1                        111                     ns = IDLE;
+    33                                                           else
+    34              1                        159                     ns = CHK_CMD;
+    35                                                       end
+    36                                                       CHK_CMD : begin
+    37                                                           if (ss_if.SS_n)
+    38              1                          5                     ns = IDLE;
+    39                                                           else begin
+    40                                                               if (~ss_if.MOSI)
+    41              1                        101                         ns = WRITE;
+    42                                                               else begin
+    43                                                                   // ORIGINAL BUG: State transition logic was reversed
+    44                                                                   // BUGGY: if (received_address) ns = READ_ADD; else ns = READ_DATA;
+    45                                                                   // FIXED: Proper state transition based on address reception
+    46                                                                   if (received_address) 
+    47              1                         26                             ns = READ_DATA;  // Fixed: should go to READ_DATA when address received
+    48                                                                   else
+    49              1                         81                             ns = READ_ADD;   // Fixed: should go to READ_ADD when no address received
+    50                                                               end
+    51                                                           end
+    52                                                       end
+    53                                                       WRITE : begin
+    54                                                           if (ss_if.SS_n)
+    55              1                         54                     ns = IDLE;
+    56                                                           else
+    57              1                        207                     ns = WRITE;
+    58                                                       end
+    59                                                       READ_ADD : begin
+    60                                                           if (ss_if.SS_n)
+    61              1                         39                     ns = IDLE;
+    62                                                           else
+    63              1                        169                     ns = READ_ADD;
+    64                                                       end
+    65                                                       READ_DATA : begin
+    66                                                           if (ss_if.SS_n)
+    67              1                         11                     ns = IDLE;
+    68                                                           else
+    69              1                         55                     ns = READ_DATA;
+    70                                                       end
+    71                                                   endcase
+    72                                               end
+    73                                               
+    74              1                       2001     always @(posedge ss_if.clk) begin
+    75                                                   if (~ss_if.rst_n) begin 
+    76              1                         46             ss_if.rx_data <= 0;
+    77              1                         46             ss_if.rx_valid <= 0;
+    78              1                         46             received_address <= 0;
+    79              1                         46             ss_if.MISO <= 0;
+    80              1                         46             counter <= 0;  // ORIGINAL BUG: Counter not reset - FIXED: Added counter reset
+    81                                                   end
+    82                                                   else begin
+    83                                                       case (cs)
+    84                                                           IDLE : begin
+    85              1                        152                     ss_if.rx_valid <= 0;
+    86                                                           end
+    87                                                           CHK_CMD : begin
+    88              1                        147                     counter <= 10;      
+    89                                                           end
+    90                                                           WRITE : begin
+    91                                                               if (counter > 0) begin
+    92              1                        579                         ss_if.rx_data[counter-1] <= ss_if.MOSI;
+    93              1                        579                         counter <= counter - 1;
+    94                                                               end
+    95                                                               else begin
+    96              1                        254                         ss_if.rx_valid <= 1;
+    97                                                               end
+    98                                                           end
+    99                                                           READ_ADD : begin
+    100                                                              if (counter > 0) begin
+    101             1                        420                         ss_if.rx_data[counter-1] <= ss_if.MOSI;
+    102             1                        420                         counter <= counter - 1;
+    103                                                              end
+    104                                                              else begin
+    105             1                        139                         ss_if.rx_valid <= 1;
+    106             1                        139                         received_address <= 1;
+    107                                                              end
+    108                                                          end
+    109                                                          READ_DATA : begin
+    110                                                              if (ss_if.tx_valid) begin
+    111                                                                  // ORIGINAL BUG: rx_valid set to 0 too early and missing rx_valid reset
+    112                                                                  // BUGGY: rx_valid <= 0; (at the beginning)
+    113                                                                  // FIXED: Proper rx_valid handling in READ_DATA state
+    114                                                                  if (counter > 0) begin
+    115             1                        100                             ss_if.MISO <= ss_if.tx_data[counter-1];
+    116             1                        100                             counter <= counter - 1;
+    117                                                                  end
+    118                                                                  else begin
+    119             1                         14                             received_address <= 0;
+    120             1                         14                             ss_if.rx_valid <= 0;  // Fixed: rx_valid reset at appropriate time
+    121                                                                  end
+    122                                                              end
+    123                                                              else begin
+    124                                                                  if (counter > 0) begin
+    125             1                         98                             ss_if.rx_data[counter-1] <= ss_if.MOSI;
+    126             1                         98                             counter <= counter - 1;
+    127                                                                  end
+    128                                                                  else begin
+    129             1                         14                             ss_if.rx_valid <= 1;
+    130             1                         14                             counter <= 9;  // ORIGINAL BUG: counter <= 8 - FIXED: counter <= 9 for proper bit counting
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22        22         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/DUT --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         11 
+Toggled Node Count   =         11 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (22 of 22 bins)
+
+=================================================================================
+=== Instance: /top/reference_dut
+=== Design Unit: work.SPI_Slave
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        42        40         2    95.23%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top/reference_dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File SPi_Slave_interface.v
+------------------------------------IF Branch------------------------------------
+    18                                       587     Count coming in to IF
+    18              1                         46             if (~rst_n)
+    20              1                        541             else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    25                                      1041     Count coming in to CASE
+    26              1                        270                 ST_IDLE: begin                         // modified name
+    32              1                        213                 ST_CHECK_CMD: begin                    // modified name
+    48              1                        261                 ST_WRITE: begin                        // modified name
+    55              1                        208                 ST_READ_ADDR: begin                    // modified name
+    63              1                         66                 ST_READ_DATA: begin                    // modified name
+                                              23     All False Count
+Branch totals: 6 hits of 6 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    27                                       270     Count coming in to IF
+    27              1                        111                     if (SS_n)
+    29              1                        159                     else 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                       213     Count coming in to IF
+    33              1                          5                     if (SS_n)
+    35              1                        208                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    36                                       208     Count coming in to IF
+    36              1                        101                         if (~MOSI) begin 
+    39              1                        107                         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    40                                       107     Count coming in to CASE
+    41              1                         81                                 1'b0: next_state = ST_READ_ADDR;  // modified name
+    42              1                         26                                 1'b1: next_state = ST_READ_DATA;  // modified name
+    43              1                    ***0***                                 1'bx: next_state = ST_READ_ADDR;  // modified name
+                                         ***0***     All False Count
+Branch totals: 2 hits of 4 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                       261     Count coming in to IF
+    49              1                        207                     if (SS_n == 0)
+    51              1                         54                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                       208     Count coming in to IF
+    56              1                        169                     if (SS_n == 0) begin
+    59              1                         39                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    64                                        66     Count coming in to IF
+    64              1                         55                     if (SS_n == 0)
+    66              1                         11                     else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    74                                      2001     Count coming in to IF
+    74              1                         46             if (~rst_n) begin 
+    80              1                       1955             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    81                                      1955     Count coming in to CASE
+    82              1                        152                     ST_IDLE: rx_valid <= 0;            // modified name
+    83              1                        147                     ST_CHECK_CMD: begin                // modified name
+    86              1                        833                     ST_WRITE: begin                    // modified name
+    95              1                        559                     ST_READ_ADDR: begin                // modified name
+    105             1                        226                     ST_READ_DATA: begin                // modified name
+                                              38     All False Count
+Branch totals: 6 hits of 6 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    87                                       833     Count coming in to IF
+    87              1                        579                         if (bit_counter > 0) begin     // modified name
+    91              1                        254                         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    96                                       559     Count coming in to IF
+    96              1                        420                         if (bit_counter > 0) begin     // modified name
+    100             1                        139                         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    106                                      226     Count coming in to IF
+    106             1                        114                         if (tx_valid) begin
+    116             1                        112                         else begin 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    107                                      114     Count coming in to IF
+    107             1                        100                             if (bit_counter > 0) begin // modified name
+    111             1                         14                             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    117                                      112     Count coming in to IF
+    117             1                         98                             if (bit_counter > 0) begin // modified name
+    121             1                         14                             else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         4         0   100.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top/reference_dut --
+
+  File SPi_Slave_interface.v
+----------------Focused Condition View-------------------
+Line       87 Item    1  (bit_counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       96 Item    1  (bit_counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       107 Item    1  (bit_counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       117 Item    1  (bit_counter > 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+FSM Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    FSM States                       5         5         0   100.00%
+    FSM Transitions                  8         8         0   100.00%
+
+================================FSM Details================================
+
+FSM Coverage for instance /top/reference_dut --
+
+FSM_ID: current_state
+    Current State Object : current_state
+    ----------------------
+    State Value MapInfo :
+    ---------------------
+Line          State Name               Value
+----          ----------               -----
+  26             ST_IDLE                   0
+  32        ST_CHECK_CMD                   1
+  55        ST_READ_ADDR                   3
+  63        ST_READ_DATA                   4
+  48            ST_WRITE                   2
+    Covered States :
+    ----------------
+                   State           Hit_count
+                   -----           ---------
+                 ST_IDLE                 157          
+            ST_CHECK_CMD                 150          
+            ST_READ_ADDR                 117          
+            ST_READ_DATA                  30          
+                ST_WRITE                 132          
+    Covered Transitions :
+    ---------------------
+Line            Trans_ID           Hit_count          Transition          
+----            --------           ---------          ----------          
+  30                   0                 150          ST_IDLE -> ST_CHECK_CMD          
+  43                   1                  60          ST_CHECK_CMD -> ST_READ_ADDR          
+  42                   2                  15          ST_CHECK_CMD -> ST_READ_DATA          
+  37                   3                  67          ST_CHECK_CMD -> ST_WRITE          
+  34                   4                   8          ST_CHECK_CMD -> ST_IDLE          
+  60                   5                  60          ST_READ_ADDR -> ST_IDLE          
+  67                   6                  15          ST_READ_DATA -> ST_IDLE          
+  52                   7                  66          ST_WRITE -> ST_IDLE           
+
+
+    Summary                       Bins      Hits    Misses  Coverage
+    -------                       ----      ----    ------  --------
+        FSM States                   5         5         0   100.00%
+        FSM Transitions              8         8         0   100.00%
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      39        38         1    97.43%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/reference_dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File SPi_Slave_interface.v
+    1                                                module SPI_Slave(
+    2                                                    input MOSI, SS_n, clk, rst_n, tx_valid,
+    3                                                    input [7:0] tx_data,
+    4                                                    output reg MISO, rx_valid,
+    5                                                    output reg [9:0] rx_data
+    6                                                );
+    7                                                    parameter ST_IDLE = 3'b000;                    // modified name
+    8                                                    parameter ST_CHECK_CMD = 3'b001;               // modified name
+    9                                                    parameter ST_WRITE = 3'b010;                   // modified name
+    10                                                   parameter ST_READ_ADDR = 3'b011;               // modified name
+    11                                                   parameter ST_READ_DATA = 3'b100;               // modified name
+    12                                                   
+    13                                                   reg address_read_flag;                         // modified name
+    14                                                   reg [3:0] bit_counter;                         // modified name
+    15                                                   reg [2:0] current_state, next_state;           // modified name
+    16                                                   
+    17              1                        587         always @(posedge clk) begin 
+    18                                                       if (~rst_n)
+    19              1                         46                 current_state <= ST_IDLE;              // modified name
+    20                                                       else 
+    21              1                        541                 current_state <= next_state;           // modified name
+    22                                                   end
+    23                                                   
+    24              1                       1041         always @(*) begin 
+    25                                                       case(current_state)                        // modified name
+    26                                                           ST_IDLE: begin                         // modified name
+    27                                                               if (SS_n)
+    28              1                        111                         next_state = ST_IDLE;          // modified name
+    29                                                               else 
+    30              1                        159                         next_state = ST_CHECK_CMD;     // modified name
+    31                                                           end
+    32                                                           ST_CHECK_CMD: begin                    // modified name
+    33                                                               if (SS_n)
+    34              1                          5                         next_state = ST_IDLE;          // modified name
+    35                                                               else begin
+    36                                                                   if (~MOSI) begin 
+    37              1                        101                             next_state = ST_WRITE;     // modified name
+    38                                                                   end 
+    39                                                                   else begin
+    40                                                                       casex(address_read_flag)   // modified name
+    41              1                         81                                 1'b0: next_state = ST_READ_ADDR;  // modified name
+    42              1                         26                                 1'b1: next_state = ST_READ_DATA;  // modified name
+    43              1                    ***0***                                 1'bx: next_state = ST_READ_ADDR;  // modified name
+    44                                                                       endcase
+    45                                                                   end
+    46                                                               end
+    47                                                           end
+    48                                                           ST_WRITE: begin                        // modified name
+    49                                                               if (SS_n == 0)
+    50              1                        207                         next_state = ST_WRITE;         // modified name
+    51                                                               else begin
+    52              1                         54                         next_state = ST_IDLE;          // modified name
+    53                                                               end
+    54                                                           end
+    55                                                           ST_READ_ADDR: begin                    // modified name
+    56                                                               if (SS_n == 0) begin
+    57              1                        169                         next_state = ST_READ_ADDR;     // modified name
+    58                                                               end
+    59                                                               else begin
+    60              1                         39                         next_state = ST_IDLE;          // modified name
+    61                                                               end
+    62                                                           end
+    63                                                           ST_READ_DATA: begin                    // modified name
+    64                                                               if (SS_n == 0)
+    65              1                         55                         next_state = ST_READ_DATA;     // modified name
+    66                                                               else begin
+    67              1                         11                         next_state = ST_IDLE;          // modified name
+    68                                                               end
+    69                                                           end
+    70                                                       endcase
+    71                                                   end
+    72                                                   
+    73              1                       2001         always @(posedge clk) begin
+    74                                                       if (~rst_n) begin 
+    75              1                         46                 rx_data <= 0;
+    76              1                         46                 rx_valid <= 0;
+    77              1                         46                 address_read_flag <= 0;                // modified name
+    78              1                         46                 MISO <= 0;
+    79                                                       end
+    80                                                       else begin
+    81                                                           case(current_state)                    // modified name
+    82              1                        152                     ST_IDLE: rx_valid <= 0;            // modified name
+    83                                                               ST_CHECK_CMD: begin                // modified name
+    84              1                        147                         bit_counter <= 10;             // modified name
+    85                                                               end
+    86                                                               ST_WRITE: begin                    // modified name
+    87                                                                   if (bit_counter > 0) begin     // modified name
+    88              1                        579                             rx_data[bit_counter-1] <= MOSI;  // modified name
+    89              1                        579                             bit_counter <= bit_counter - 1;  // modified name
+    90                                                                   end
+    91                                                                   else begin
+    92              1                        254                             rx_valid <= 1;
+    93                                                                   end
+    94                                                               end
+    95                                                               ST_READ_ADDR: begin                // modified name
+    96                                                                   if (bit_counter > 0) begin     // modified name
+    97              1                        420                             rx_data[bit_counter-1] <= MOSI;  // modified name
+    98              1                        420                             bit_counter <= bit_counter - 1;  // modified name
+    99                                                                   end
+    100                                                                  else begin
+    101             1                        139                             rx_valid <= 1;
+    102             1                        139                             address_read_flag <= 1;    // modified name
+    103                                                                  end
+    104                                                              end
+    105                                                              ST_READ_DATA: begin                // modified name
+    106                                                                  if (tx_valid) begin
+    107                                                                      if (bit_counter > 0) begin // modified name
+    108             1                        100                                 MISO <= tx_data[bit_counter-1];  // modified name
+    109             1                        100                                 bit_counter <= bit_counter - 1;  // modified name
+    110                                                                      end
+    111                                                                      else begin
+    112             1                         14                                 address_read_flag <= 0;  // modified name
+    113             1                         14                                 rx_valid <= 0;
+    114                                                                      end
+    115                                                                  end
+    116                                                                  else begin 
+    117                                                                      if (bit_counter > 0) begin // modified name
+    118             1                         98                                 rx_data[bit_counter-1] <= MOSI;  // modified name
+    119             1                         98                                 bit_counter <= bit_counter - 1;  // modified name
+    120                                                                      end
+    121                                                                      else begin
+    122             1                         14                                 rx_valid <= 1;
+    123             1                         14                                 bit_counter <= 9;      // modified name
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         72        72         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/reference_dut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =         36 
+Toggled Node Count   =         36 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (72 of 72 bins)
+
+=================================================================================
+=== Instance: /top
+=== Design Unit: work.top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       5         5         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File top.sv
+    7                                                module top();
+    8                                                    bit clk;
+    9                                                    initial begin 
+    10              1                          1             forever #2 clk = ~clk;
+    10              2                       4003     
+    10              3                       4002     
+    11                                                   end
+    12                                                   
+    13                                                   spi_slave_if slave_interface(clk);
+    14                                                   
+    15                                                   // Design Under Test with interface connection
+    16                                                   SLAVE DUT(slave_interface);
+    17                                                   
+    18                                                   // Reference model with individual signal connections for comparison
+    19                                                   SPI_Slave reference_dut(
+    20                                                       .MOSI(slave_interface.MOSI),
+    21                                                       .SS_n(slave_interface.SS_n),
+    22                                                       .clk(slave_interface.clk),
+    23                                                       .rst_n(slave_interface.rst_n),
+    24                                                       .rx_data(slave_interface.rx_data_ref),
+    25                                                       .tx_valid(slave_interface.tx_valid),
+    26                                                       .tx_data(slave_interface.tx_data),
+    27                                                       .MISO(slave_interface.MISO_ref),
+    28                                                       .rx_valid(slave_interface.rx_valid_ref)
+    29                                                   );
+    30                                                   
+    31                                                   initial begin 
+    32              1                          1             uvm_config_db #(virtual spi_slave_if)::set(null, "uvm_test_top", "SPI_IF", slave_interface);
+    33              1                          1             run_test("spi_slave_test");
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /spi_slave_seq_item_package
+=== Design Unit: work.spi_slave_seq_item_package
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16         8         8    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_seq_item_package
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_sequence_item.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       2001     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+                                            2001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+    7               4                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                       2001     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+                                            2001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    68                                      2000     Count coming in to IF
+    68              1                       1787             if (transaction_counter < 11)              // modified variable name
+                                             213     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    74                                      1000     Count coming in to IF
+    74              1                         71             if (transaction_counter == 14)             // modified variable name
+                                             929     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                      1000     Count coming in to IF
+    80              1                         41             if (read_operation_count == 24)            // modified variable name
+                                             959     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       5         3         2    60.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_slave_seq_item_package --
+
+  File spi_slave_sequence_item.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       68 Item    1  (transaction_counter < 11)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       74 Item    1  (transaction_counter == 14)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       80 Item    1  (read_operation_count == 24)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19         9        10    47.36%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_seq_item_package --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_sequence_item.sv
+    1                                                package spi_slave_seq_item_package;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import shared_pkg::*;
+    5                                                    
+    6                                                class spi_slave_seq_item extends uvm_sequence_item;
+    7               1                    ***0***         `uvm_object_utils(spi_slave_seq_item);
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                       2001     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                       2001     
+    7              10                    ***0***     
+    8                                                    
+    9                                                    // Signal declarations - reordered for better organization
+    10                                                   rand logic [7:0] tx_data;
+    11                                                   rand logic SS_n;
+    12                                                   rand logic rst_n;
+    13                                                   rand logic tx_valid;
+    14                                                   rand bit [0:10] random_array;                  // modified name
+    15                                                   
+    16                                                   logic [9:0] rx_data, rx_data_ref;
+    17                                                   logic rx_valid, MISO, MISO_ref, rx_valid_ref;
+    18                                                   logic MOSI;
+    19                                               
+    20                                                   function new(string name = "spi_slave_seq_item");
+    21              1                       4006             super.new(name);
+    22                                                   endfunction
+    23                                                   
+    24                                                   // Reset constraint
+    25                                                   constraint reset_constraint {                  // modified name
+    26                                                       rst_n dist {1 :/ 98, 0 :/ 2};             // reordered spacing
+    27                                                   }
+    28                                                   
+    29                                                   // SS_n constraint for all cases except read data
+    30                                                   constraint ss_n_general_cases {                // modified name
+    31                                                       if (random_array[0:2] inside {3'b000, 3'b001, 3'b110} && transaction_counter % 14 != 0) {  // modified variable name
+    32                                                           SS_n == 0;
+    33                                                       }
+    34                                                       else {
+    35                                                           SS_n == 1;
+    36                                                       }
+    37                                                   }
+    38                                                   
+    39                                                   // SS_n constraint specifically for read data
+    40                                                   constraint ss_n_read_data_case {               // modified name
+    41                                                       if (random_array[0:2] inside {3'b111} && read_operation_count % 24 != 0) {  // modified variable name
+    42                                                           SS_n == 0;
+    43                                                       }
+    44                                                       else {
+    45                                                           SS_n == 1;
+    46                                                       }
+    47                                                   }
+    48                                                   
+    49                                                   // tx_valid constraint for read data operations
+    50                                                   constraint tx_valid_control {                  // modified name
+    51                                                       if (random_array[0:2] == 3'b111 && read_operation_count == 23) {  // modified variable name
+    52                                                           tx_valid == 1;
+    53                                                       }
+    54                                                       if (random_array[0:2] != 3'b111) {
+    55                                                           tx_valid == 0;
+    56                                                       }
+    57                                                   }
+    58                                                   
+    59                                                   // Random array constraint for MOSI generation
+    60                                                   constraint mosi_data_constraint {              // modified name
+    61                                                       if (previous_SS_state && !SS_n) {          // modified variable name
+    62                                                           random_array[0:2] inside {3'b000, 3'b001, 3'b110, 3'b111};
+    63                                                       }
+    64                                                   }
+    65                                                   
+    66                                                   function void post_randomize();
+    67              1                       2000             previous_SS_state = SS_n;                  // modified variable name
+    68                                                       if (transaction_counter < 11)              // modified variable name
+    69              1                       1787                 MOSI = random_array[transaction_counter];  // modified variable name
+    70                                                   endfunction
+    71                                                   
+    72                                                   function void update_transaction_counter();    // modified name
+    73              1                       1000             transaction_counter++;                     // modified variable name
+    74                                                       if (transaction_counter == 14)             // modified variable name
+    75              1                         71                 transaction_counter = 0;               // modified variable name
+    76                                                   endfunction
+    77                                               
+    78                                                   function void update_read_operation_counter(); // modified name
+    79              1                       1000             read_operation_count++;                    // modified variable name
+    80                                                       if (read_operation_count == 24)            // modified variable name
+    81              1                         41                 read_operation_count = 0;              // modified variable name
+    82                                                   endfunction
+    83                                                   
+    84                                                   function string convert2string();
+    85              1                    ***0***             return $sformatf("%s reset = 0b%0b, mosi = %b, miso = %b, ss_n = %b", 
+    86                                                                       super.convert2string(), rst_n, MOSI, MISO, SS_n);
+    87                                                   endfunction
+    88                                                   
+    89                                                   function string convert2string_stimulus();
+    90              1                    ***0***             return $sformatf("reset = 0b%0b, mosi = %b, ss_n = %b", 
+
+
+=================================================================================
+=== Instance: /spi_slave_main_sequence_package
+=== Design Unit: work.spi_slave_main_sequence_package
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       2         2         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/spi_slave_main_sequence_package/spi_slave_main_sequence/body/#ublk#56510229#20/immed__39
+                     spi_slave_main_sequence.sv(39)
+                                                        0          1
+/spi_slave_main_sequence_package/spi_slave_main_sequence/body/#ublk#56510229#48/immed__67
+                     spi_slave_main_sequence.sv(67)
+                                                        0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        14         6         8    42.85%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_main_sequence_package
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_main_sequence.sv
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               1                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                          1     Count coming in to IF
+    8               2                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               3                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+    8               4                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                          1     Count coming in to IF
+    8               5                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               6                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                      1000     Count coming in to IF
+    30              1                         72                 if (transaction_counter == 0) begin                          // modified variable name
+    35              1                        928                 else begin 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    58                                      1000     Count coming in to IF
+    58              1                         42                 if (read_operation_count == 0) begin                         // modified variable name
+    63              1                        958                 else begin 
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       4         2         2    50.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_slave_main_sequence_package --
+
+  File spi_slave_main_sequence.sv
+----------------Focused Condition View-------------------
+Line       8 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       8 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       30 Item    1  (transaction_counter == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+----------------Focused Condition View-------------------
+Line       58 Item    1  (read_operation_count == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      36        28         8    77.77%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_main_sequence_package --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_main_sequence.sv
+    1                                                package spi_slave_main_sequence_package;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    import shared_pkg::*;
+    6                                                    
+    7                                                class spi_slave_main_sequence extends uvm_sequence #(spi_slave_seq_item);
+    8               1                    ***0***         `uvm_object_utils(spi_slave_main_sequence);
+    8               2                    ***0***     
+    8               3                    ***0***     
+    8               4                    ***0***     
+    8               5                    ***0***     
+    8               6                          1     
+    8               7                    ***0***     
+    8               8                    ***0***     
+    8               9                          1     
+    8              10                    ***0***     
+    9                                                    
+    10                                                   spi_slave_seq_item sequence_item;              // modified name
+    11                                                   
+    12                                                   function new(string name = "spi_slave_main_sequence");
+    13              1                          1             super.new(name);
+    14                                                   endfunction
+    15                                                   
+    16                                                   task body();
+    17              1                          1             sequence_item = spi_slave_seq_item::type_id::create("sequence_item");  // modified name
+    18                                                       
+    19                                                       // First sequence block: general operations
+    20              1                       1000             repeat(1000) begin
+    21              1                       1000                 start_item(sequence_item);
+    22                                                           
+    23                                                           // Configure constraints for general cases
+    24              1                       1000                 sequence_item.reset_constraint.constraint_mode(1);           // modified constraint name
+    25              1                       1000                 sequence_item.ss_n_general_cases.constraint_mode(1);         // modified constraint name
+    26              1                       1000                 sequence_item.mosi_data_constraint.constraint_mode(1);       // modified constraint name
+    27              1                       1000                 sequence_item.ss_n_read_data_case.constraint_mode(0);        // modified constraint name
+    28              1                       1000                 sequence_item.tx_valid_control.constraint_mode(0);           // modified constraint name
+    29                                                           
+    30                                                           if (transaction_counter == 0) begin                          // modified variable name
+    31              1                         72                     sequence_item.random_array.rand_mode(1);                 // modified variable name
+    32              1                         72                     $display("Random Array = %b, Time = %t, Counter = %d",   // modified message
+    33                                                                       sequence_item.random_array, $time, transaction_counter);  // modified variable name
+    34                                                           end
+    35                                                           else begin 
+    36              1                        928                     sequence_item.random_array.rand_mode(0);                 // modified variable name
+    37                                                           end
+    38                                                           
+    39                                                           assert(sequence_item.randomize() with {
+    40                                                               sequence_item.random_array[0:2] inside {3'b000, 3'b001, 3'b110};  // modified variable name
+    41                                                           });
+    42                                                           
+    43              1                       1000                 sequence_item.update_transaction_counter();                  // modified function name
+    44              1                       1000                 finish_item(sequence_item);
+    45                                                       end
+    46                                               
+    47                                                       // Second sequence block: read data operations
+    48              1                       1000             repeat(1000) begin
+    49              1                       1000                 start_item(sequence_item);
+    50                                                           
+    51                                                           // Configure constraints for read data cases
+    52              1                       1000                 sequence_item.reset_constraint.constraint_mode(1);           // modified constraint name
+    53              1                       1000                 sequence_item.ss_n_general_cases.constraint_mode(0);         // modified constraint name
+    54              1                       1000                 sequence_item.mosi_data_constraint.constraint_mode(0);       // modified constraint name
+    55              1                       1000                 sequence_item.ss_n_read_data_case.constraint_mode(1);        // modified constraint name
+    56              1                       1000                 sequence_item.tx_valid_control.constraint_mode(1);           // modified constraint name
+    57                                                           
+    58                                                           if (read_operation_count == 0) begin                         // modified variable name
+    59              1                         42                     sequence_item.random_array.rand_mode(1);                 // modified variable name
+    60              1                         42                     $display("Random Array = %b, Time = %t, Counter = %d",   // modified message
+    61                                                                       sequence_item.random_array, $time, read_operation_count);  // modified variable name
+    62                                                           end
+    63                                                           else begin 
+    64              1                        958                     sequence_item.random_array.rand_mode(0);                 // modified variable name
+    65                                                           end
+    66                                                           
+    67                                                           assert(sequence_item.randomize() with {
+    68                                                               sequence_item.random_array[0:2] inside {3'b111};         // modified variable name
+    69                                                           });
+    70                                                           
+    71              1                       1000                 sequence_item.update_read_operation_counter();               // modified function name
+    72              1                       1000                 finish_item(sequence_item);
+
+
+=================================================================================
+=== Instance: /spi_slave_reset_sequence_package
+=== Design Unit: work.spi_slave_reset_sequence_package
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_reset_sequence_package
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_reset_sequence.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+    7               4                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_slave_reset_sequence_package --
+
+  File spi_slave_reset_sequence.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      18        10         8    55.55%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_reset_sequence_package --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_reset_sequence.sv
+    1                                                package spi_slave_reset_sequence_package;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    
+    6                                                class spi_slave_reset_sequence extends uvm_sequence #(spi_slave_seq_item);
+    7               1                    ***0***         `uvm_object_utils(spi_slave_reset_sequence);
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                    
+    9                                                    spi_slave_seq_item reset_item;                 // modified name
+    10                                                   
+    11                                                   function new(string name = "spi_slave_reset_sequence");
+    12              1                          1             super.new(name);
+    13                                                   endfunction
+    14                                                   
+    15                                                   task body();
+    16              1                          1             reset_item = spi_slave_seq_item::type_id::create("reset_item");  // modified name
+    17              1                          1             start_item(reset_item);
+    18                                                       
+    19                                                       // Apply reset conditions
+    20              1                          1             reset_item.rst_n = 1;                      // modified name
+    21              1                          1             reset_item.rx_valid = 0;
+    22              1                          1             reset_item.tx_valid = 0;
+    23              1                          1             reset_item.SS_n = 1;
+    24                                                       
+    25              1                          1             finish_item(reset_item);
+
+
+=================================================================================
+=== Instance: /spi_slave_collector_package
+=== Design Unit: work.spi_slave_collector_package
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          6        na        na        na
+            Covergroup Bins         15        15         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /spi_slave_collector_package/spi_slave_coverage/functional_coverage 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    15         15          -                      
+    missing/total bins:                                     0         15          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint receiver_data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_general_cases                     100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_read_operations                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_active                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mosi_patterns                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_mosi_ss_combinations                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/spi_slave_collector_package::spi_slave_coverage::functional_coverage  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    15         15          -                      
+    missing/total bins:                                     0         15          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint receiver_data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       849          1          -    Covered              
+        bin auto[1]                                       257          1          -    Covered              
+        bin auto[2]                                       240          1          -    Covered              
+        bin auto[3]                                       617          1          -    Covered              
+    Coverpoint ss_n_general_cases                     100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin transaction_complete                           71          1          -    Covered              
+    Coverpoint ss_n_read_operations                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read_transaction                               41          1          -    Covered              
+    Coverpoint ss_n_active                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin slave_select_active                          1886          1          -    Covered              
+    Coverpoint mosi_patterns                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write_address_cmd                             646          1          -    Covered              
+        bin write_data_cmd                                115          1          -    Covered              
+        bin read_address_cmd                              127          1          -    Covered              
+        bin read_data_cmd                                 721          1          -    Covered              
+    Cross cross_mosi_ss_combinations                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin write_addr_active                         614          1          -    Covered              
+            bin write_data_active                          94          1          -    Covered              
+            bin read_addr_active                           95          1          -    Covered              
+            bin read_data_active                          693          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_collector_package --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_collector.sv
+    1                                                package spi_slave_collector_package;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    import shared_pkg::*;
+    6                                                    
+    7                                                class spi_slave_coverage extends uvm_component;
+    8               1                    ***0***         `uvm_component_utils(spi_slave_coverage)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                
+    10                                                   uvm_analysis_export #(spi_slave_seq_item) coverage_export;           // modified name
+    11                                                   uvm_tlm_analysis_fifo #(spi_slave_seq_item) coverage_fifo;           // modified name
+    12                                                   spi_slave_seq_item coverage_item;                                    // modified name
+    13                                                   
+    14                                                   covergroup functional_coverage;                                      // modified name
+    15                                                       receiver_data: coverpoint coverage_item.rx_data[9:8];            // modified name
+    16                                                       ss_n_general_cases : coverpoint coverage_item.SS_n {             // modified name
+    17                                                           bins transaction_complete = (1 => 0[*13] => 1);              // modified name
+    18                                                       }
+    19                                                       ss_n_read_operations : coverpoint coverage_item.SS_n {           // modified name
+    20                                                           bins read_transaction = (1 => 0[*23] => 1);                  // modified name
+    21                                                       }
+    22                                                       ss_n_active : coverpoint coverage_item.SS_n {                    // modified name
+    23                                                           bins slave_select_active = {0};                              // modified name
+    24                                                       }
+    25                                                       mosi_patterns: coverpoint coverage_item.MOSI {                   // modified name
+    26                                                           bins write_address_cmd = (0 => 0 => 0);                      // modified name
+    27                                                           bins write_data_cmd = (0 => 0 => 1);                         // modified name
+    28                                                           bins read_address_cmd = (1 => 1 => 0);                       // modified name
+    29                                                           bins read_data_cmd = (1 => 1 => 1);                          // modified name
+    30                                                       }
+    31                                                       cross_mosi_ss_combinations : cross mosi_patterns, ss_n_active {  // modified name
+    32                                                           option.cross_auto_bin_max = 0;
+    33                                                           bins write_addr_active = binsof(ss_n_active.slave_select_active) && binsof(mosi_patterns.write_address_cmd);  // modified name
+    34                                                           bins write_data_active = binsof(ss_n_active.slave_select_active) && binsof(mosi_patterns.write_data_cmd);     // modified name
+    35                                                           bins read_addr_active = binsof(ss_n_active.slave_select_active) && binsof(mosi_patterns.read_address_cmd);    // modified name
+    36                                                           bins read_data_active = binsof(ss_n_active.slave_select_active) && binsof(mosi_patterns.read_data_cmd);       // modified name
+    37                                                       }
+    38                                                   endgroup
+    39                                               
+    40                                                   function new(string name = "spi_slave_coverage", uvm_component parent = null);
+    41              1                          1             super.new(name, parent);
+    42              1                          1             functional_coverage = new();                                     // modified name
+    43                                                   endfunction
+    44                                               
+    45                                                   function void build_phase(uvm_phase phase);
+    46              1                          1             super.build_phase(phase);
+    47              1                          1             coverage_export = new("coverage_export", this);                  // modified name
+    48              1                          1             coverage_fifo = new("coverage_fifo", this);                      // modified name
+    49                                                   endfunction
+    50                                               
+    51                                                   function void connect_phase(uvm_phase phase);
+    52              1                          1             super.connect_phase(phase);
+    53              1                          1             coverage_export.connect(coverage_fifo.analysis_export);          // modified name
+    54                                                   endfunction
+    55                                               
+    56                                                   task run_phase(uvm_phase phase);
+    57              1                          1             super.run_phase(phase);
+    58              1                          1             forever begin 
+    59              1                       2002                 coverage_fifo.get(coverage_item);                            // modified name
+    60              1                       2001                 functional_coverage.sample();                                // modified name
+
+
+=================================================================================
+=== Instance: /spi_slave_scoreboard_pkg
+=== Design Unit: work.spi_slave_scoreboard_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         4         6    40.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_scoreboard_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_scoreboard.sv
+------------------------------------IF Branch------------------------------------
+    34                                      2001     Count coming in to IF
+    34              1                    ***0***                 if (scoreboard_item.MISO != scoreboard_item.MISO_ref || 
+    42              1                       2001                 else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                   ***0***     Count coming in to IF
+    38              1                    ***0***                     `uvm_error("SCOREBOARD_CHECK", $sformatf("Mismatch detected! DUT Output: %s Reference Output: MISO=0b%0b",  // modified message
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                      2001     Count coming in to IF
+    43              1                    ***0***                     `uvm_info("SCOREBOARD_CHECK", $sformatf("Transaction verified successfully: %s",  // modified message
+                                            2001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    52                                         1     Count coming in to IF
+    52              1                          1             `uvm_info("FINAL_REPORT", $sformatf("Successful transactions: %0d", success_counter), UVM_MEDIUM)  // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         1     Count coming in to IF
+    53              1                          1             `uvm_info("FINAL_REPORT", $sformatf("Failed transactions: %0d", error_counter), UVM_MEDIUM)        // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       3         0         3     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_slave_scoreboard_pkg --
+
+  File spi_slave_scoreboard.sv
+----------------Focused Condition View-------------------
+Line       34 Item    1  ((this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref) || (this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref) || (this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref))
+Condition totals: 0 of 3 input terms covered = 0.00%
+
+                                                            Input Term   Covered  Reason for no coverage   Hint
+                                                           -----------  --------  -----------------------  --------------
+          (this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref)         N  '_1' not hit             Hit '_1'
+  (this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref)         N  '_1' not hit             Hit '_1'
+    (this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                                              Non-masking condition(s)      
+ ---------  ---------  --------------------                                                    -------------------------     
+  Row   1:          1  (this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref)_0          ~((this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref) || (this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref))
+  Row   2:    ***0***  (this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref)_1          -                             
+  Row   3:          1  (this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref)_0  (~(this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref) && ~(this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref))
+  Row   4:    ***0***  (this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref)_1  ~(this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref)
+  Row   5:          1  (this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref)_0    (~(this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref) && ~(this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref))
+  Row   6:    ***0***  (this.scoreboard_item.rx_data != this.scoreboard_item.rx_data_ref)_1    (~(this.scoreboard_item.MISO != this.scoreboard_item.MISO_ref) && ~(this.scoreboard_item.rx_valid != this.scoreboard_item.rx_valid_ref))
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      21        16         5    76.19%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_scoreboard_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_scoreboard.sv
+    1                                                package spi_slave_scoreboard_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*; 
+    5                                                    
+    6                                                class spi_slave_scoreboard extends uvm_scoreboard;
+    7               1                    ***0***         `uvm_component_utils(spi_slave_scoreboard);
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                    
+    9                                                    uvm_analysis_export #(spi_slave_seq_item) scoreboard_export;         // modified name
+    10                                                   uvm_tlm_analysis_fifo #(spi_slave_seq_item) scoreboard_fifo;         // modified name
+    11                                                   spi_slave_seq_item scoreboard_item;                                  // modified name
+    12              1                          1         int error_counter = 0;                                               // modified name
+    13              1                          1         int success_counter = 0;                                             // modified name
+    14                                                   
+    15                                                   function new(string name = "spi_slave_scoreboard", uvm_component parent = null);
+    16              1                          1             super.new(name, parent);
+    17                                                   endfunction
+    18                                               
+    19                                                   function void build_phase(uvm_phase phase);
+    20              1                          1             super.build_phase(phase);
+    21              1                          1             scoreboard_export = new("scoreboard_export", this);              // modified name
+    22              1                          1             scoreboard_fifo = new("scoreboard_fifo", this);                  // modified name
+    23                                                   endfunction
+    24                                               
+    25                                                   function void connect_phase(uvm_phase phase);
+    26              1                          1             super.connect_phase(phase);
+    27              1                          1             scoreboard_export.connect(scoreboard_fifo.analysis_export);      // modified name
+    28                                                   endfunction
+    29                                               
+    30                                                   task run_phase(uvm_phase phase);
+    31              1                          1             super.run_phase(phase);
+    32              1                          1             forever begin
+    33              1                       2002                 scoreboard_fifo.get(scoreboard_item);                        // modified name
+    34                                                           if (scoreboard_item.MISO != scoreboard_item.MISO_ref || 
+    35                                                               scoreboard_item.rx_valid != scoreboard_item.rx_valid_ref || 
+    36                                                               scoreboard_item.rx_data != scoreboard_item.rx_data_ref) begin
+    37                                                               
+    38              1                    ***0***                     `uvm_error("SCOREBOARD_CHECK", $sformatf("Mismatch detected! DUT Output: %s Reference Output: MISO=0b%0b",  // modified message
+    39                                                                   scoreboard_item.convert2string(), scoreboard_item.MISO_ref))
+    40              1                    ***0***                     error_counter++;                                         // modified name
+    41                                                           end
+    42                                                           else begin
+    43              1                    ***0***                     `uvm_info("SCOREBOARD_CHECK", $sformatf("Transaction verified successfully: %s",  // modified message
+    44                                                                   scoreboard_item.convert2string()), UVM_HIGH)
+    45              1                       2001                     success_counter++;                                       // modified name
+    46                                                           end
+    47                                                       end
+    48                                                   endtask
+    49                                               
+    50                                                   function void report_phase(uvm_phase phase);
+    51              1                          1             super.report_phase(phase);
+    52              1                          1             `uvm_info("FINAL_REPORT", $sformatf("Successful transactions: %0d", success_counter), UVM_MEDIUM)  // modified message
+    53              1                          1             `uvm_info("FINAL_REPORT", $sformatf("Failed transactions: %0d", error_counter), UVM_MEDIUM)        // modified message
+
+
+=================================================================================
+=== Instance: /spi_slave_sequencer_package
+=== Design Unit: work.spi_slave_sequencer_package
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         2         2    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_sequencer_package --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_sequencer.sv
+    1                                                package spi_slave_sequencer_package;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    
+    6                                                class spi_slave_sequencer extends uvm_sequencer #(spi_slave_seq_item);
+    7               1                    ***0***         `uvm_component_utils(spi_slave_sequencer)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                    
+    9                                                    function new(string name = "spi_slave_sequencer", uvm_component parent = null);
+    10              1                          1             super.new(name, parent);
+
+
+=================================================================================
+=== Instance: /spi_slave_monitor_pkg
+=== Design Unit: work.spi_slave_monitor_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         1         1    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_monitor_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_monitor.sv
+------------------------------------IF Branch------------------------------------
+    43                                      2001     Count coming in to IF
+    43              1                    ***0***                 `uvm_info("MONITOR_RUN", monitored_item.convert2string_stimulus(), UVM_HIGH)  // modified message
+                                            2001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      23        20         3    86.95%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_monitor_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_monitor.sv
+    1                                                package spi_slave_monitor_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    import shared_pkg::*;
+    6                                                    
+    7                                                class spi_slave_monitor extends uvm_monitor;
+    8               1                    ***0***         `uvm_component_utils(spi_slave_monitor);
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                    
+    10                                                   virtual spi_slave_if monitor_interface;        // modified name
+    11                                                   spi_slave_seq_item monitored_item;             // modified name
+    12                                                   uvm_analysis_port #(spi_slave_seq_item) monitor_analysis_port;  // modified name
+    13                                                   
+    14                                                   function new(string name = "spi_slave_monitor", uvm_component parent = null);
+    15              1                          1             super.new(name, parent);
+    16                                                   endfunction
+    17                                                   
+    18                                                   function void build_phase(uvm_phase phase);
+    19              1                          1             super.build_phase(phase);
+    20              1                          1             monitor_analysis_port = new("monitor_analysis_port", this);  // modified name
+    21                                                   endfunction
+    22                                                   
+    23                                                   task run_phase(uvm_phase phase);
+    24              1                          1             super.run_phase(phase);
+    25              1                          1             forever begin
+    26              1                       2002                 monitored_item = spi_slave_seq_item::type_id::create("monitored_item");  // modified name
+    27              1                       2002                 @(negedge monitor_interface.clk);
+    28                                                           
+    29                                                           // Capture all interface signals
+    30              1                       2001                 monitored_item.rst_n = monitor_interface.rst_n;
+    31              1                       2001                 monitored_item.MOSI = monitor_interface.MOSI;
+    32              1                       2001                 monitored_item.SS_n = monitor_interface.SS_n;
+    33              1                       2001                 monitored_item.MISO = monitor_interface.MISO;
+    34              1                       2001                 monitored_item.MISO_ref = monitor_interface.MISO_ref;
+    35              1                       2001                 monitored_item.tx_valid = monitor_interface.tx_valid;
+    36              1                       2001                 monitored_item.tx_data = monitor_interface.tx_data;
+    37              1                       2001                 monitored_item.rx_valid = monitor_interface.rx_valid;
+    38              1                       2001                 monitored_item.rx_data = monitor_interface.rx_data;
+    39              1                       2001                 monitored_item.rx_valid_ref = monitor_interface.rx_valid_ref;
+    40              1                       2001                 monitored_item.rx_data_ref = monitor_interface.rx_data_ref;
+    41                                               
+    42              1                       2001                 monitor_analysis_port.write(monitored_item);
+    43              1                    ***0***                 `uvm_info("MONITOR_RUN", monitored_item.convert2string_stimulus(), UVM_HIGH)  // modified message
+
+
+=================================================================================
+=== Instance: /spi_slave_driver_pkg
+=== Design Unit: work.spi_slave_driver_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         2         1         1    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_driver_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_driver.sv
+------------------------------------IF Branch------------------------------------
+    33                                      2001     Count coming in to IF
+    33              1                    ***0***                 `uvm_info("DRIVER_RUN", current_item.convert2string_stimulus(), UVM_HIGH)  // modified message
+                                            2001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16        13         3    81.25%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_driver_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_driver.sv
+    1                                                package spi_slave_driver_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    import shared_pkg::*;
+    6                                                    
+    7                                                class spi_slave_driver extends uvm_driver #(spi_slave_seq_item);
+    8               1                    ***0***         `uvm_component_utils(spi_slave_driver);
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                    
+    10                                                   virtual spi_slave_if driver_interface;         // modified name
+    11                                                   spi_slave_seq_item current_item;               // modified name
+    12                                                   
+    13                                                   function new(string name = "spi_slave_driver", uvm_component parent = null);
+    14              1                          1             super.new(name, parent);
+    15                                                   endfunction
+    16                                                   
+    17                                                   task run_phase(uvm_phase phase);
+    18              1                          1             super.run_phase(phase);
+    19              1                          1             forever begin 
+    20              1                       2002                 current_item = spi_slave_seq_item::type_id::create("current_item");  // modified name
+    21              1                       2002                 seq_item_port.get_next_item(current_item);
+    22                                                           
+    23                                                           // Drive signals to interface
+    24              1                       2001                 driver_interface.rst_n = current_item.rst_n;
+    25              1                       2001                 driver_interface.SS_n = current_item.SS_n;
+    26              1                       2001                 driver_interface.MOSI = current_item.MOSI;
+    27              1                       2001                 driver_interface.tx_valid = current_item.tx_valid;
+    28              1                       2001                 driver_interface.tx_data = current_item.tx_data;
+    29                                                           
+    30              1                       2001                 @(negedge driver_interface.clk);
+    31              1                       2001                 seq_item_port.item_done();
+    32                                                           
+    33              1                    ***0***                 `uvm_info("DRIVER_RUN", current_item.convert2string_stimulus(), UVM_HIGH)  // modified message
+
+
+=================================================================================
+=== Instance: /spi_slave_config_pkg
+=== Design Unit: work.spi_slave_config_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_config_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_config.sv
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               1                    ***0***         `uvm_object_utils(spi_slave_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               2                    ***0***         `uvm_object_utils(spi_slave_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               3                    ***0***         `uvm_object_utils(spi_slave_config)
+    6               4                    ***0***         `uvm_object_utils(spi_slave_config)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               5                    ***0***         `uvm_object_utils(spi_slave_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    6                                    ***0***     Count coming in to IF
+    6               6                    ***0***         `uvm_object_utils(spi_slave_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /spi_slave_config_pkg --
+
+  File spi_slave_config.sv
+----------------Focused Condition View-------------------
+Line       6 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       6 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         1        10     9.09%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_config_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_config.sv
+    1                                                package spi_slave_config_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    
+    5                                                class spi_slave_config extends uvm_object;
+    6               1                    ***0***         `uvm_object_utils(spi_slave_config)
+    6               2                    ***0***     
+    6               3                    ***0***     
+    6               4                    ***0***     
+    6               5                    ***0***     
+    6               6                    ***0***     
+    6               7                    ***0***     
+    6               8                    ***0***     
+    6               9                    ***0***     
+    6              10                    ***0***     
+    7                                                    
+    8                                                    virtual spi_slave_if config_interface;         // modified name
+    9                                                    
+    10                                                   function new(string name = "spi_slave_config"); // modified formatting
+    11              1                          1             super.new(name);
+
+
+=================================================================================
+=== Instance: /spi_slave_agent_pkg
+=== Design Unit: work.spi_slave_agent_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         4         1         3    25.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_agent_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_agent.sv
+------------------------------------IF Branch------------------------------------
+    25                                         1     Count coming in to IF
+    25              1                    ***0***             if (!uvm_config_db#(spi_slave_config)::get(this, "", "CFG", agent_config)) begin  // modified name
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    26                                   ***0***     Count coming in to IF
+    26              1                    ***0***                 `uvm_fatal("AGENT_BUILD", "Configuration object retrieval failed")            // modified message
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        12         3    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_agent_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_agent.sv
+    1                                                package spi_slave_agent_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_seq_item_package::*;
+    5                                                    import spi_slave_config_pkg::*;
+    6                                                    import spi_slave_driver_pkg::*;
+    7                                                    import spi_slave_monitor_pkg::*;
+    8                                                    import spi_slave_sequencer_package::*;
+    9                                                
+    10                                               class spi_slave_agent extends uvm_agent;
+    11              1                    ***0***         `uvm_component_utils(spi_slave_agent)
+    11              2                    ***0***     
+    11              3                          2     
+    12                                                     
+    13                                                   spi_slave_config agent_config;                                       // modified name
+    14                                                   spi_slave_driver driver;                                             // modified name
+    15                                                   spi_slave_sequencer sequencer;                                       // modified name
+    16                                                   spi_slave_monitor monitor;                                           // modified name
+    17                                                   uvm_analysis_port #(spi_slave_seq_item) agent_analysis_port;         // modified name
+    18                                               
+    19                                                   function new(string name = "spi_slave_agent", uvm_component parent = null);
+    20              1                          1             super.new(name, parent);
+    21                                                   endfunction
+    22                                               
+    23                                                   function void build_phase(uvm_phase phase);
+    24              1                          1             super.build_phase(phase);
+    25                                                       if (!uvm_config_db#(spi_slave_config)::get(this, "", "CFG", agent_config)) begin  // modified name
+    26              1                    ***0***                 `uvm_fatal("AGENT_BUILD", "Configuration object retrieval failed")            // modified message
+    27                                                       end
+    28              1                          1             sequencer = spi_slave_sequencer::type_id::create("sequencer", this);              // modified name
+    29              1                          1             driver = spi_slave_driver::type_id::create("driver", this);                       // modified name
+    30              1                          1             monitor = spi_slave_monitor::type_id::create("monitor", this);                    // modified name
+    31              1                          1             agent_analysis_port = new("agent_analysis_port", this);                           // modified name
+    32                                                   endfunction
+    33                                               
+    34                                                   function void connect_phase(uvm_phase phase);
+    35              1                          1             super.connect_phase(phase);
+    36              1                          1             driver.driver_interface = agent_config.config_interface;          // modified names
+    37              1                          1             monitor.monitor_interface = agent_config.config_interface;        // modified names
+    38              1                          1             driver.seq_item_port.connect(sequencer.seq_item_export);
+    39              1                          1             monitor.monitor_analysis_port.connect(agent_analysis_port);       // modified name
+
+
+=================================================================================
+=== Instance: /spi_slave_env_pkg
+=== Design Unit: work.spi_slave_env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10         8         2    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_env.sv
+    1                                                package spi_slave_env_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_agent_pkg::*;
+    5                                                    import spi_slave_scoreboard_pkg::*;
+    6                                                    import spi_slave_collector_package::*;
+    7                                                    
+    8                                                class spi_slave_env extends uvm_env;
+    9               1                    ***0***         `uvm_component_utils(spi_slave_env);
+    9               2                    ***0***     
+    9               3                          2     
+    10                                                   
+    11                                                   spi_slave_scoreboard scoreboard_component;                            // modified name
+    12                                                   spi_slave_coverage coverage_component;                                // modified name
+    13                                                   spi_slave_agent agent_component;                                      // modified name
+    14                                                   
+    15                                                   function new(string name = "spi_slave_env", uvm_component parent = null);
+    16              1                          1             super.new(name, parent);
+    17                                                   endfunction
+    18                                                   
+    19                                                   function void build_phase(uvm_phase phase);
+    20              1                          1             super.build_phase(phase);
+    21              1                          1             agent_component = spi_slave_agent::type_id::create("agent_component", this);      // modified name
+    22              1                          1             scoreboard_component = spi_slave_scoreboard::type_id::create("scoreboard_component", this);  // modified name
+    23              1                          1             coverage_component = spi_slave_coverage::type_id::create("coverage_component", this);        // modified name
+    24                                                   endfunction
+    25                                                   
+    26                                                   function void connect_phase(uvm_phase phase);
+    27              1                          1             agent_component.agent_analysis_port.connect(scoreboard_component.scoreboard_export);         // modified names
+    28              1                          1             agent_component.agent_analysis_port.connect(coverage_component.coverage_export);             // modified names
+
+
+=================================================================================
+=== Instance: /spi_slave_test_pkg
+=== Design Unit: work.spi_slave_test_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        12         5         7    41.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /spi_slave_test_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_test.sv
+------------------------------------IF Branch------------------------------------
+    28                                         1     Count coming in to IF
+    28              1                    ***0***             if (!uvm_config_db #(virtual spi_slave_if)::get(this, "", "SPI_IF", test_configuration.config_interface))  // modified name
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    29                                   ***0***     Count coming in to IF
+    29              1                    ***0***                 `uvm_fatal("TEST_CONFIG", "Virtual interface configuration failed")            // modified message
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                          1             `uvm_info("TEST_EXECUTION", "Starting reset sequence", UVM_LOW)                    // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    40                                         1     Count coming in to IF
+    40              1                          1             `uvm_info("TEST_EXECUTION", "Reset sequence completed", UVM_LOW)                   // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    42                                         1     Count coming in to IF
+    42              1                          1             `uvm_info("TEST_EXECUTION", "Beginning main stimulus generation", UVM_LOW)         // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1             `uvm_info("TEST_EXECUTION", "Stimulus generation finished", UVM_LOW)               // modified message
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      20        17         3    85.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /spi_slave_test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File spi_slave_test.sv
+    1                                                package spi_slave_test_pkg;
+    2                                                    import uvm_pkg::*;
+    3                                                    `include "uvm_macros.svh"
+    4                                                    import spi_slave_env_pkg::*;
+    5                                                    import spi_slave_reset_sequence_package::*;
+    6                                                    import spi_slave_main_sequence_package::*;
+    7                                                    import spi_slave_config_pkg::*;
+    8                                                    
+    9                                                class spi_slave_test extends uvm_test;
+    10              1                    ***0***         `uvm_component_utils(spi_slave_test);
+    10              2                    ***0***     
+    10              3                          4     
+    11                                                   
+    12                                                   spi_slave_env test_environment;                                      // modified name
+    13                                                   spi_slave_config test_configuration;                                 // modified name
+    14                                                   spi_slave_reset_sequence reset_sequence;                             // modified name
+    15                                                   spi_slave_main_sequence main_test_sequence;                          // modified name
+    16                                                   
+    17                                                   function new(string name = "spi_slave_test", uvm_component parent = null);
+    18              1                          1             super.new(name, parent);
+    19                                                   endfunction
+    20                                                   
+    21                                                   function void build_phase(uvm_phase phase);
+    22              1                          1             super.build_phase(phase);
+    23              1                          1             test_environment = spi_slave_env::type_id::create("test_environment", this);      // modified name
+    24              1                          1             test_configuration = spi_slave_config::type_id::create("test_configuration", this); // modified name
+    25              1                          1             reset_sequence = spi_slave_reset_sequence::type_id::create("reset_sequence", this); // modified name
+    26              1                          1             main_test_sequence = spi_slave_main_sequence::type_id::create("main_test_sequence", this); // modified name
+    27                                               
+    28                                                       if (!uvm_config_db #(virtual spi_slave_if)::get(this, "", "SPI_IF", test_configuration.config_interface))  // modified name
+    29              1                    ***0***                 `uvm_fatal("TEST_CONFIG", "Virtual interface configuration failed")            // modified message
+    30                                                       
+    31              1                          1             uvm_config_db #(spi_slave_config)::set(this, "*", "CFG", test_configuration);
+    32                                                   endfunction
+    33                                               
+    34                                                   task run_phase(uvm_phase phase);
+    35              1                          1             super.run_phase(phase);
+    36              1                          1             phase.raise_objection(this);
+    37                                                       
+    38              1                          1             `uvm_info("TEST_EXECUTION", "Starting reset sequence", UVM_LOW)                    // modified message
+    39              1                          1             reset_sequence.start(test_environment.agent_component.sequencer);                  // modified name
+    40              1                          1             `uvm_info("TEST_EXECUTION", "Reset sequence completed", UVM_LOW)                   // modified message
+    41                                                       
+    42              1                          1             `uvm_info("TEST_EXECUTION", "Beginning main stimulus generation", UVM_LOW)         // modified message
+    43              1                          1             main_test_sequence.start(test_environment.agent_component.sequencer);              // modified name
+    44              1                          1             `uvm_info("TEST_EXECUTION", "Stimulus generation finished", UVM_LOW)               // modified message
+    45                                                       
+    46              1                          1             phase.drop_objection(this);
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /spi_slave_collector_package/spi_slave_coverage/functional_coverage 
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    15         15          -                      
+    missing/total bins:                                     0         15          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint receiver_data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_general_cases                     100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_read_operations                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint ss_n_active                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint mosi_patterns                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross cross_mosi_ss_combinations                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/spi_slave_collector_package::spi_slave_coverage::functional_coverage  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    15         15          -                      
+    missing/total bins:                                     0         15          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint receiver_data                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin auto[0]                                       849          1          -    Covered              
+        bin auto[1]                                       257          1          -    Covered              
+        bin auto[2]                                       240          1          -    Covered              
+        bin auto[3]                                       617          1          -    Covered              
+    Coverpoint ss_n_general_cases                     100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin transaction_complete                           71          1          -    Covered              
+    Coverpoint ss_n_read_operations                   100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin read_transaction                               41          1          -    Covered              
+    Coverpoint ss_n_active                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin slave_select_active                          1886          1          -    Covered              
+    Coverpoint mosi_patterns                          100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write_address_cmd                             646          1          -    Covered              
+        bin write_data_cmd                                115          1          -    Covered              
+        bin read_address_cmd                              127          1          -    Covered              
+        bin read_data_cmd                                 721          1          -    Covered              
+    Cross cross_mosi_ss_combinations                  100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin write_addr_active                         614          1          -    Covered              
+            bin write_data_active                          94          1          -    Covered              
+            bin read_addr_active                           95          1          -    Covered              
+            bin read_data_active                          693          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/top/DUT/cover__check_read_data_to_idle  SLAVE  Verilog  SVA  SPI_slave.sv(213)
+                                                                                 4 Covered   
+/top/DUT/cover__check_read_addr_to_idle  SLAVE  Verilog  SVA  SPI_slave.sv(212)
+                                                                                21 Covered   
+/top/DUT/cover__check_write_to_idle      SLAVE  Verilog  SVA  SPI_slave.sv(211)
+                                                                                12 Covered   
+/top/DUT/cover__check_read_data_transition 
+                                         SLAVE  Verilog  SVA  SPI_slave.sv(210)
+                                                                                15 Covered   
+/top/DUT/cover__check_read_addr_transition 
+                                         SLAVE  Verilog  SVA  SPI_slave.sv(209)
+                                                                                59 Covered   
+/top/DUT/cover__check_write_transition   SLAVE  Verilog  SVA  SPI_slave.sv(208)
+                                                                                65 Covered   
+/top/DUT/cover__check_idle_transition    SLAVE  Verilog  SVA  SPI_slave.sv(207)
+                                                                               147 Covered   
+/top/DUT/cover__check_rx_valid_property  SLAVE  Verilog  SVA  SPI_slave.sv(206)
+                                                                                22 Covered   
+/top/DUT/cover__check_reset_property     SLAVE  Verilog  SVA  SPI_slave.sv(205)
+                                                                                46 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 9
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/top/DUT/assert__check_read_data_to_idle
+                     SPI_slave.sv(203)                  0          1
+/top/DUT/assert__check_read_addr_to_idle
+                     SPI_slave.sv(202)                  0          1
+/top/DUT/assert__check_write_to_idle
+                     SPI_slave.sv(201)                  0          1
+/top/DUT/assert__check_read_data_transition
+                     SPI_slave.sv(200)                  0          1
+/top/DUT/assert__check_read_addr_transition
+                     SPI_slave.sv(199)                  0          1
+/top/DUT/assert__check_write_transition
+                     SPI_slave.sv(198)                  0          1
+/top/DUT/assert__check_idle_transition
+                     SPI_slave.sv(197)                  0          1
+/top/DUT/assert__check_rx_valid_property
+                     SPI_slave.sv(196)                  0          1
+/top/DUT/assert__check_reset_property
+                     SPI_slave.sv(195)                  0          1
+/spi_slave_main_sequence_package/spi_slave_main_sequence/body/#ublk#56510229#20/immed__39
+                     spi_slave_main_sequence.sv(39)
+                                                        0          1
+/spi_slave_main_sequence_package/spi_slave_main_sequence/body/#ublk#56510229#48/immed__67
+                     spi_slave_main_sequence.sv(67)
+                                                        0          1
+
+Total Coverage By Instance (filtered view): 88.90%
+
