@@ -6,8 +6,7 @@ The project implements and verify **SPI slave connected to a single-port RAM** t
 
 ## Documentation
 
-- [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI_Slave_with_Single_Port_RAM.pdf): project requirements and specification.
-- Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
+- [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI_Slave_with_Single_Port_RAM.pdf): see the documentation PDF report for full details (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels).
 
 ## Repository structure
 
