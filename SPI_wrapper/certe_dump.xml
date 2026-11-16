@@ -1,0 +1,240 @@
+<certe_dump>
+  <instance type=" wrapper_test "> 
+     uvm_test_top 
+  
+     <instance type=" wrapper_env "> 
+        env 
+  
+        <instance type=" RAM_agent "> 
+           ram_agt 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              agt_ap 
+              <connection>  uvm_test_top.env.ram_cov.cov_export  </connection> 
+           </port> 
+  
+           <instance type=" RAM_monitor "> 
+              mon 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 mon_ap 
+                 <connection>  uvm_test_top.env.ram_agt.agt_ap  </connection> 
+              </port> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" RAM_coverage_collector "> 
+           ram_cov 
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              cov_export 
+              <connection>  uvm_test_top.env.ram_cov.cov_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              cov_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" spi_slave_agent "> 
+           slave_agt 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              agent_analysis_port 
+              <connection>  uvm_test_top.env.slave_cov.coverage_export  </connection> 
+           </port> 
+  
+           <instance type=" spi_slave_monitor "> 
+              monitor 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 monitor_analysis_port 
+                 <connection>  uvm_test_top.env.slave_agt.agent_analysis_port  </connection> 
+              </port> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" spi_slave_coverage "> 
+           slave_cov 
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              coverage_export 
+              <connection>  uvm_test_top.env.slave_cov.coverage_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              coverage_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" wrapper_agent "> 
+           wrapper_agt 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              agt_ap 
+              <connection>  uvm_test_top.env.wrapper_cov.cov_export  </connection> 
+              <connection>  uvm_test_top.env.wrapper_sb.sb_export  </connection> 
+           </port> 
+  
+           <instance type=" wrapper_driver "> 
+              drv 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 rsp_port 
+              </port> 
+  
+              <port if_type = "uvm_seq_item_pull_port" txn_type = "anonymous"> 
+                 seq_item_port 
+                 <connection>  uvm_test_top.env.wrapper_agt.sqr.seq_item_export  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <instance type=" wrapper_monitor "> 
+              mon 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 mon_ap 
+                 <connection>  uvm_test_top.env.wrapper_agt.agt_ap  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <instance type=" wrapper_sequencer "> 
+              sqr 
+  
+              <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+                 rsp_export 
+                 <connection>  uvm_test_top.env.wrapper_agt.sqr.sqr_rsp_analysis_fifo.analysis_export  </connection> 
+              </export> 
+  
+              <imp if_type = "uvm_seq_item_pull_imp" txn_type = "anonymous"> 
+                 seq_item_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" wrapper_coverage_collector "> 
+           wrapper_cov 
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              cov_export 
+              <connection>  uvm_test_top.env.wrapper_cov.cov_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              cov_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" wrapper_scoreboard "> 
+           wrapper_sb 
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              sb_export 
+              <connection>  uvm_test_top.env.wrapper_sb.sb_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              sb_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+     </instance> 
+  
+  </instance> 
+  
+  </certe_dump>
