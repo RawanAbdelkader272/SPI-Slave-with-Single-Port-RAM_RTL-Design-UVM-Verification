@@ -15,19 +15,10 @@ The project folder contains three sub-folders, one per verification level, plus 
 
 ```text
 .
-├── RAM/                                Single-port RAM: standalone UVM testbench
-├── SPI_slave/                          SPI slave: standalone UVM testbench
+├── RAM/                                Single-port RAM: Design and UVM testbench
+├── SPI_slave/                          SPI slave: Design and UVM testbench
 ├── SPI_wrapper/                        Wrapper + full integration testbench  <-- run the project from here
-└── UVM Project_requirements.pdf        Project requirements and specification
 ```
-
-| Folder | What it verifies |
-|---|---|
-| `RAM/` | RAM commands (write/read address, write/read data), `tx_valid` behavior, ordering rules, reset |
-| `SPI_slave/` | Slave FSM, 11-bit frame reception, frame timing (13 and 23 `SS_n` low cycles), `MISO` shifting, reset |
-| `SPI_wrapper/` | Slave and RAM connected together: end-to-end write/read-back through `MOSI`/`MISO`, ordering, reset mid-frame, `MISO` stability |
-
----
 
 ## Design overview
 
