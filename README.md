@@ -2,11 +2,12 @@
 
 The project implements and verify **SPI slave connected to a single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
 
+- **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
+
 ## Documentation
 
 - [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI_Slave_with_Single_Port_RAM.pdf): project requirements and specification.
 - Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
-- **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
 
 ## Repository structure
 
