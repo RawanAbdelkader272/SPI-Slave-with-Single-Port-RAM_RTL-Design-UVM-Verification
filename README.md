@@ -1,35 +1,100 @@
-# SPI Slave with Single-Port RAM | RTL Design & UVM Verification
+# SPI Slave with Single Port RAM - RTL Design & UVM Verification
 
-![SystemVerilog](https://img.shields.io/badge/Language-SystemVerilog-blue)
-![UVM](https://img.shields.io/badge/Verification-UVM-green)
-![Simulator](https://img.shields.io/badge/Simulator-QuestaSim-orange)
+UVM verification of an **SPI slave connected to a 256×8 single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
+- **Tools:** QuestaSim 2021.1, UVM 1.1d, SystemVerilog
 
-## Overview
-This project implements and verify SPI (Serial Peripheral Interface) Slave module integrated with a single-port RAM. The design is written in SystemVerilog and verified using a structured UVM (Universal Verification Methodology). 
+---
 
-The SPI Slave core operates as a peripheral device, receiving commands and data from an SPI master, decoding operations, and interfacing with a synchronous single-port RAM for read/write transactions. A comprehensive verification environment ensures protocol compliance, data integrity, and robust corner-case handling.
+## Repository structure
+
+The project folder contains three sub-folders, one per verification level, plus the requirements document:
+
+```text
+.
+├── RAM/                                Single-port RAM: standalone UVM testbench
+├── SPI_slave/                          SPI slave: standalone UVM testbench
+├── SPI_wrapper/                        Wrapper + full integration testbench  <-- run the project from here
+└── UVM Project_requirements.pdf        Project requirements and specification
+```
+
+| Folder | What it verifies |
+|---|---|
+| `RAM/` | RAM commands (write/read address, write/read data), `tx_valid` behavior, ordering rules, reset |
+| `SPI_slave/` | Slave FSM, 11-bit frame reception, frame timing (13 and 23 `SS_n` low cycles), `MISO` shifting, reset |
+| `SPI_wrapper/` | Slave and RAM connected together: end-to-end write/read-back through `MOSI`/`MISO`, ordering, reset mid-frame, `MISO` stability |
+
+> The final testbench runs **inside `SPI_wrapper/`**. It reuses the slave and RAM monitors and coverage collectors from the other two folders as passive agents, so one simulation gives wrapper, slave and RAM coverage together.
+
+---
+
+## Design overview
+
+The master sends **1 control bit + 10 bits** per frame, MSB first, framed by `SS_n`. The first three bits select the command:
+
+| Command | First 3 bits on `MOSI` | Action |
+|---|---|---|
+| Write address | `000` | Stores the 8-bit write address |
+| Write data | `001` | Writes the byte at the stored write address |
+| Read address | `110` | Stores the 8-bit read address |
+| Read data | `111` | Reads the byte; the slave shifts it out on `MISO`, MSB first |
+
+There is no `SCLK` pin: the slave runs on the system clock and one bit is transferred per clock cycle. `SS_n` is low for 13 cycles in write and read-address frames and 23 cycles in read-data frames, followed by one high cycle. After a read data command, `tx_valid` is high for 9 cycles (1 + 8).
+
+---
+
+## How to run
+
+Run the full project from the **`SPI_wrapper`** folder with QuestaSim.
+
+```tcl
+cd SPI_wrapper
+do run.do
+```
+
+`run.do` contains:
+
+```tcl
+vlib work
+vlog -sv -f src_files.list +define+SIM +cover -covercells
+vsim -voptargs=+acc work.wrapper_top -classdebug -uvmcontrol=all -cover
+do wave.do
+run -all
+wave zoom range 0ns 600ns
+coverage save wrapper.ucdb -onexit
+```
+
+Generate the coverage report:
+
+```tcl
+vcover report wrapper.ucdb -details -annotate -output wrapper.txt
+```
+
+To run the slave or RAM testbench on its own, open QuestaSim in `SPI_slave/` or `RAM/` and run the `run.do` in that folder.
+
+---
+
+## Results (wrapper level)
+
+| Check | Result |
+|---|---|
+| Simulation length | 541,280 ns (27,064 clock cycles) |
+| Scoreboard comparisons | 27,064 correct, 0 failed |
+| `UVM_ERROR` / `UVM_FATAL` | 0 |
+| Functional coverage | 100% |
+| Code coverage (DUT) | 100% statement, 100% toggle |
+
+The slave and RAM testbenches also finish with 0 failed comparisons and 0 `UVM_ERROR` / `UVM_FATAL`.
+
+---
 
 ## Documentation
-For a detailed breakdown of the design architecture, verification plan, bug reports, waveform analysis, and coverage metrics, refer to the official project report:
-📑 **[SPI Slave with Single Port RAM - RTL Design & Verification.pdf](./SPI%20Slave%20with%20Single%20Port%20RAM%20-%20RTL%20Design%20&%20Verification.pdf)**
 
-## System Architecture
-The system consists of two primary hardware blocks communicating via control and data signals:
-- **SPI Slave Core**: FSM-driven peripheral that handles serial-to-parallel and parallel-to-serial conversion, command decoding, and RAM interface control.
-- **Single-Port RAM Backend**: Stores and retrieves data based on address/payload received from the slave.
+- [`UVM Project_requirements.pdf`](./UVM%20Project_requirements.pdf): project requirements and specification.
+- Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
+- **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
 
-### Interface Signals
-| Signal     | Width | Direction   | Description                          |
-|------------|-------|-------------|--------------------------------------|
-| `clk`      | 1     | Input       | System clock                         |
-| `rst_n`    | 1     | Input       | Synchronous active-low reset         |
-| `SS_n`     | 1     | Input       | Chip Select (active-low)             |
-| `MOSI`     | 1     | Input       | Master Out Slave In (serial data)    |
-| `MISO`     | 1     | Output      | Master In Slave Out (serial data)    |
-| `tx_data`  | 8     | Input       | Parallel data to shift out           |
-| `tx_valid` | 1     | Input       | Asserted when `tx_data` is ready     |
-| `rx_data`  | 10    | Output      | Address + payload shifted from master|
-| `rx_valid` | 1     | Output      | Single-cycle pulse on valid reception|
+---
 
-
+## Contact
+Rawan Abdelkader · E-mail: rawan.abdelkader2722@gmail.com
 
