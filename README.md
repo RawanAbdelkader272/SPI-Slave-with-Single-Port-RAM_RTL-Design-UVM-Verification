@@ -1,7 +1,6 @@
 # SPI Slave with Single Port RAM - RTL Design & UVM Verification
 
-UVM verification of an **SPI slave connected to a 256×8 single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
-- **Tools:** QuestaSim 2021.1, UVM 1.1d, SystemVerilog
+The project implements and verify **SPI slave connected to a single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
 
 ## Repository structure
 
