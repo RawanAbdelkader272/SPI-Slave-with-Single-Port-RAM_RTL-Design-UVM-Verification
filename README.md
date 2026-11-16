@@ -3,8 +3,6 @@
 UVM verification of an **SPI slave connected to a 256×8 single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
 - **Tools:** QuestaSim 2021.1, UVM 1.1d, SystemVerilog
 
----
-
 ## Repository structure
 
 The project folder contains three sub-folders, one per verification level, plus the requirements document:
@@ -22,8 +20,6 @@ The project folder contains three sub-folders, one per verification level, plus 
 | `RAM/` | RAM commands (write/read address, write/read data), `tx_valid` behavior, ordering rules, reset |
 | `SPI_slave/` | Slave FSM, 11-bit frame reception, frame timing (13 and 23 `SS_n` low cycles), `MISO` shifting, reset |
 | `SPI_wrapper/` | Slave and RAM connected together: end-to-end write/read-back through `MOSI`/`MISO`, ordering, reset mid-frame, `MISO` stability |
-
-> The final testbench runs **inside `SPI_wrapper/`**. It reuses the slave and RAM monitors and coverage collectors from the other two folders as passive agents, so one simulation gives wrapper, slave and RAM coverage together.
 
 ---
 
