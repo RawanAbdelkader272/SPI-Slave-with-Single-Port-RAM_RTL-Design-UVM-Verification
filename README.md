@@ -85,7 +85,7 @@ The slave and RAM testbenches also finish with 0 failed comparisons and 0 `UVM_E
 
 ## Documentation
 
-- [`UVM Project_requirements.pdf`](./UVM%20Project_requirements.pdf): project requirements and specification.
+- [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf): project requirements and specification.
 - Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
 - **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
 
