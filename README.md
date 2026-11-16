@@ -8,8 +8,6 @@ The project implements and verify **SPI slave connected to a single-port RAM** t
 - Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
 - **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
 
----
-
 ## Repository structure
 
 The project folder contains three sub-folders, one per verification level, plus the requirements document:
@@ -43,8 +41,6 @@ The master sends **1 control bit + 10 bits** per frame, MSB first, framed by `SS
 
 There is no `SCLK` pin: the slave runs on the system clock and one bit is transferred per clock cycle. `SS_n` is low for 13 cycles in write and read-address frames and 23 cycles in read-data frames, followed by one high cycle. After a read data command, `tx_valid` is high for 9 cycles (1 + 8).
 
----
-
 ## How to run
 
 Run the full project from the **`SPI_wrapper`** folder with QuestaSim.
@@ -73,7 +69,6 @@ vcover report wrapper.ucdb -details -annotate -output wrapper.txt
 ```
 
 To run the slave or RAM testbench on its own, open QuestaSim in `SPI_slave/` or `RAM/` and run the `run.do` in that folder.
----
 
 ## Contact
 Rawan Abdelkader · E-mail: rawan.abdelkader2722@gmail.com
