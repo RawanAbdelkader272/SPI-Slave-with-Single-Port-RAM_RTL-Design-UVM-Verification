@@ -73,21 +73,6 @@ vcover report wrapper.ucdb -details -annotate -output wrapper.txt
 ```
 
 To run the slave or RAM testbench on its own, open QuestaSim in `SPI_slave/` or `RAM/` and run the `run.do` in that folder.
-
----
-
-## Results (wrapper level)
-
-| Check | Result |
-|---|---|
-| Simulation length | 541,280 ns (27,064 clock cycles) |
-| Scoreboard comparisons | 27,064 correct, 0 failed |
-| `UVM_ERROR` / `UVM_FATAL` | 0 |
-| Functional coverage | 100% |
-| Code coverage (DUT) | 100% statement, 100% toggle |
-
-The slave and RAM testbenches also finish with 0 failed comparisons and 0 `UVM_ERROR` / `UVM_FATAL`.
-
 ---
 
 ## Contact
