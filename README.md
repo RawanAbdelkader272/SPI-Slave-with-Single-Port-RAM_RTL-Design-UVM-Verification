@@ -2,6 +2,14 @@
 
 The project implements and verify **SPI slave connected to a single-port RAM** through an SPI wrapper. The slave and the RAM are each verified on their own, then verified together through the wrapper using only the pins a real master would use (`MOSI`, `MISO`, `SS_n`, `clk`, `rst_n`).
 
+## Documentation
+
+- [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI_Slave_with_Single_Port_RAM.pdf): project requirements and specification.
+- Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
+- **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
+
+---
+
 ## Repository structure
 
 The project folder contains three sub-folders, one per verification level, plus the requirements document:
@@ -79,14 +87,6 @@ To run the slave or RAM testbench on its own, open QuestaSim in `SPI_slave/` or 
 | Code coverage (DUT) | 100% statement, 100% toggle |
 
 The slave and RAM testbenches also finish with 0 failed comparisons and 0 `UVM_ERROR` / `UVM_FATAL`.
-
----
-
-## Documentation
-
-- [`SPI Slave with Single Port RAM - RTL Design & UVM Verification.pdf`](SPI_Slave_with_Single_Port_RAM.pdf): project requirements and specification.
-- Full verification report (design specification, verification plans, assertions, coverage, waveform analysis and results for all three levels): see the documentation PDF in this repository.
-- **Supervised by:** Eng. Kareem Waseem, Co-founder & Digital Verification Team Lead, Sylvaris AI
 
 ---
 
